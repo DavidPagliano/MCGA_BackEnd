@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import config from "../config";
 import { RequestHandler } from "express";
 
-export const signUp = async (req, res) => {
+export const signup = async (req, res) => {
   try {
     // Getting the Request Body
     const { username, email, password, roles } = req.body;

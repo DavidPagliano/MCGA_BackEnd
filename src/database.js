@@ -4,7 +4,7 @@ import config from "./config";
 (async () => {
   try {
     const mongooseOptions = {
-      authSource: "admin",
+      authSource: "belieweb",
       user: config.MONGO_USER,
       pass: config.MONGO_PASSWORD,
     };

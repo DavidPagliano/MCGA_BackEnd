@@ -1,12 +1,12 @@
 import { Router } from "express";
 const router = Router();
 
-import * as plansCtrl from "../controllers/plans.controller";
+import * as plansCtrl from "../controllers/plans.controllers";
 import { authJwt } from "../middlewares";
 
 router.get("/plans", plansCtrl.getPlan);
 
-router.get("/plans/:id", plansCtrl.getPlans);
+
 
 router.post(
     "/",
@@ -17,13 +17,13 @@ router.post(
   router.put(
     "/:planId",
     [authJwt.verifyToken, authJwt.isModerator],
-    plansCtrl.updatePlan
+    plansCtrl.updatePlanById
   );
   
   router.delete(
     "/:productId",
     [authJwt.verifyToken, authJwt.isAdmin],
-    plansCtrl.deletePlans
+    plansCtrl.deletePlanById
   );
 
 export default router;
