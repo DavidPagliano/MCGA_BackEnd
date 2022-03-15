@@ -6,8 +6,6 @@ import { authJwt } from "../middlewares";
 
 router.get("/plans", plansCtrl.getPlan);
 
-
-
 router.post(
     "/",
     [authJwt.verifyToken, authJwt.isModerator],
