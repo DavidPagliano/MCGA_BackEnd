@@ -1,9 +1,8 @@
 import { Schema, model } from "mongoose";
 const planSchema = new Schema(
     {
-      NamePlan: {
+      Plan: {
         type: String,
-        required: true,
         trim: true
       },
       Description: {
@@ -11,13 +10,8 @@ const planSchema = new Schema(
         trim: true
       },
       Price: {
-        type: Number,
-        required: true,
+        type: String,
         unique: true,
-      },
-      unique: {
-        type: Number,
-        required: true
       }
     },
     {

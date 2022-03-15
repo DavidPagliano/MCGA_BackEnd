@@ -3,7 +3,6 @@ import Role from "../models/Role";
 
 import jwt from "jsonwebtoken";
 import config from "../config";
-import { RequestHandler } from "express";
 
 export const signup = async (req, res) => {
   try {

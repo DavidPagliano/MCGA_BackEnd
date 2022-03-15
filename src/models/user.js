@@ -25,11 +25,6 @@ const userSchema = new Schema(
         {
             type: Date,
             default: Date.now
-        },
-        Status_user:
-        {
-            type:Boolean,
-
         }
 
     },

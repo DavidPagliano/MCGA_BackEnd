@@ -2,7 +2,6 @@ import jwt from "jsonwebtoken";
 import config from "../config";
 import User from "../models/user";
 import Role from "../models/Role";
-import { RequestHandler } from "express";
 
 export const verifyToken = async (req, res, next) => {
   let token = req.headers["x-access-token"];
@@ -28,13 +27,13 @@ export const isModerator = async (req, res, next) => {
     const roles = await Role.find({ _id: { $in: user.roles } });
 
     for (let i = 0; i < roles.length; i++) {
-      if (roles[i].name === "moderator") {
+      if (roles[i].name === "user") {
         next();
         return;
       }
     }
 
-    return res.status(403).json({ message: "Require Moderator Role!" });
+    return res.status(403).json({ message: "Require User Role!" });
   } catch (error) {
     console.log(error)
     return res.status(500).send({ message: error });

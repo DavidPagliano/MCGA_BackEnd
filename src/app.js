@@ -45,6 +45,7 @@ app.get("/", (req, res) => {
 app.use("/api/plan", plansRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/user", userRoutes);
+
 app.use("/api/auth", authRoutes);
 
 export default app;

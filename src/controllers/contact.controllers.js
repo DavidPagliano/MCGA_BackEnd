@@ -1,4 +1,3 @@
-import { Response, RequestHandler } from "express";
 import Contact from "../models/contact";
 
 export const createContact = async (req, res) => {

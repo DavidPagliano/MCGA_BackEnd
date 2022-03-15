@@ -7,7 +7,7 @@ router.get("/contact", contactCtrl.getContacts);
 
 router.get("/contact/:id", contactCtrl.getContact);
 
-router.post("/contact", contactCtrl.createContact);
+router.post("/contacts", contactCtrl.createContact);
 
 router.delete("/contact/:id", contactCtrl.deleteContact);
 

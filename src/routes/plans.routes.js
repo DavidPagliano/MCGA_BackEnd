@@ -8,13 +8,13 @@ router.get("/plans", plansCtrl.getPlan);
 
 router.post(
     "/",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken, authJwt.isAdmin],
     plansCtrl.createPlan
   );
   
   router.put(
     "/:planId",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken, authJwt.isAdmin],
     plansCtrl.updatePlanById
   );
   

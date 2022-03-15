@@ -1,4 +1,3 @@
-import { use } from "express/lib/application";
 import User from "../models/user";
 import Role from "../models/user";
 
@@ -34,7 +33,7 @@ export const createUser = async ( req, res ) => {
 export const getUser = async (req, res) => {
     try {
         const user = await User.find();
-        return res.json(user);
+        return res.json(user || 'User gets');
     } catch (error) {
         res.json(error);
     }

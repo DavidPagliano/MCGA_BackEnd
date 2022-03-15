@@ -1,14 +1,13 @@
 import Plans from "../models/plans";
 
 export const createPlan = async (req, res) => {
-  const { name, description, price, Unique } = req.body;
+  const { Plan, Description, Price } = req.body;
 
   try {
     const newPlan = new Plans({
-      name,
-      description,
-      price,
-      Unique,
+      Plan,
+      Description,
+      Price,
     });
 
     const planSaved = await newPlan.save();
